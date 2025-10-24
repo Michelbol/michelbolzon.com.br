@@ -45,6 +45,7 @@ services:
             - "${DB_PORT}:${DB_PORT}"
         networks:
             - laravel
+            - global_proxy_network
 
 volumes:
     dbdata:
