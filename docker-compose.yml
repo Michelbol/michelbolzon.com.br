@@ -29,9 +29,9 @@ services:
             - /etc/letsencrypt:/etc/letsencrypt:ro
         networks:
             - laravel
+            - global_proxy_network
         depends_on:
             - app
-            - global_proxy_network
 
     db:
         image: mysql:8.0
