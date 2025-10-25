@@ -31,6 +31,7 @@ services:
             - laravel
         depends_on:
             - app
+            - global_proxy_network
 
     db:
         image: mysql:8.0
@@ -45,7 +46,6 @@ services:
             - "${DB_PORT}:${DB_PORT}"
         networks:
             - laravel
-            - global_proxy_network
 
 volumes:
     dbdata:
