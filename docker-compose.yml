@@ -27,9 +27,11 @@ services:
             - ./infra/nginx/default.conf:/etc/nginx/conf.d/default.conf
             - ./src:/var/www/html
             - /etc/letsencrypt:/etc/letsencrypt:ro
+        ports:
+            - "80:80"
+            - "443:443"
         networks:
             - laravel
-            - global_proxy_network
         depends_on:
             - app
 
@@ -53,5 +55,3 @@ volumes:
 networks:
     laravel:
         driver: bridge
-    global_proxy_network:
-        external: true
