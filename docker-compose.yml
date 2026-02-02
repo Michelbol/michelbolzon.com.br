@@ -18,6 +18,7 @@ services:
             - XDEBUG_MODE=off
         networks:
             - laravel
+        restart: always
 
     web:
         image: nginx:alpine
@@ -30,6 +31,7 @@ services:
             - "443:443"
         networks:
             - laravel
+        restart: always
         depends_on:
             - app
     db:
@@ -45,6 +47,7 @@ services:
             - "${DB_PORT}:${DB_PORT}"
         networks:
             - laravel
+        restart: always
 
 volumes:
     dbdata:
