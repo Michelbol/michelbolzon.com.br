@@ -4,7 +4,8 @@ RUN apt-get update && apt-get install -y \
     git \
     zip unzip \
     libzip-dev \
-    && docker-php-ext-install pdo pdo_mysql zip \
+    libsqlite3-dev \
+    && docker-php-ext-install pdo pdo_sqlite zip \
     && pecl install xdebug \
     && docker-php-ext-enable xdebug \
     && rm -rf /var/lib/apt/lists/
