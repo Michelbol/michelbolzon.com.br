@@ -21,7 +21,7 @@ class CurriculumController extends Controller
     {
         $now = Carbon::now();
         $birthDay = Carbon::create(1995, 10, 11);
-        $age = $now->diffInYears($birthDay);
+        $age = (int)$birthDay->diffInYears($now);
         return view('curriculum', compact('age'));
     }
 
